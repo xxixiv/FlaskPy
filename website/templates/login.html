@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="formBox">
+         <form class="form" method="POST">
+         <h2>SIGN IN</h2>
+         <div class="inputBox">
+            <input class="input" type="text" required="required" name="username" id="username">
+            <i class="fa-regular fa-user"></i>
+            <span>Username</span>
+        </div>
+        <div class="inputBox">    
+            <input class="input pword" type="password" required="required" name="password" id="password">
+            <i class="fa-solid fa-lock"></i>
+            <span>Password</span>
+            <div class="eye">
+                <i class="show fa-solid fa-eye"></i>
+                <i class="hide fa-regular fa-eye-slash"></i>
+            </div>
+        </div>
+             <div class="inputBox">
+                <button type="submit" value="Sign In" class="input">Sign In</button>
+             </div>
+             <p>Not registered? <a href="/sign_up" class="login">Create an account</a></p>    
+         </div>
+     </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+j
+{
+         position: absolute;
+         height: 100%;
+         background: linear-gradient(transparent, var(--secondary-color4));
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+         animation: rain 5s linear infinite;
+         z-index: -10000000;
+}
+
+j:nth-child(3n +1)
+{
+         background: linear-gradient(transparent, var(--secondary-color3));
+}
+
+j:nth-child(3n +2)
+{
+         background: linear-gradient(transparent, var(--secondary-color2));
+}
+
+j:nth-child(3n +3)
+{
+         background: linear-gradient(transparent, var(--welcome-color2));
+}
+
+@keyframes rain{
+         0%
+         {
+                  transform: translateY(-100%);
+         }
+         100%
+         {
+                  transform: translateY(calc(100vh + 200px));
+         }
+}

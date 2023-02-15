@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href="../static/Assets/Css/dashboard.css">
+{% block title %}SignUp{% endblock %}
+{% block content %}
+        <div class="formBox">
+         <form class="form" method="POST">
+         <h2>SIGN UP</h2>
+            
+             <div class="inputBox">
+                 <input class="input" type="text" required="required" name="username" id="username">
+                 <i class="fa-regular fa-user"></i>
+                 <span>Username</span>
+             </div> 
+             <div class="inputBox">
+                 <input class="input" type="email" required="required" name="email" id="email">
+                 <i class="fa-regular fa-envelope"></i>
+                 <span>Email Address</span>
+                 
+             </div>
+             <div class="inputBox">
+                
+                 <input class="input pword" type="password" required="required" name="password1" id="password1">
+                 <i class="fa-solid fa-lock"></i>
+                 <span>Password</span>
+                 <div class="eye">
+                    <i class="show fa-solid fa-eye"></i>
+                 <i class="hide fa-regular fa-eye-slash"></i>
+                </div>
+             </div>
+             <div class="inputBox">
+                
+                 <input class="input pword" type="password" required="required" name="password2" id="password2">
+                 <i class="fa-solid fa-lock"></i>
+                 <span>Confirm Password</span>
+                 <div class="eye">
+                    <i class="show fa-solid fa-eye"></i>
+                 <i class="hide fa-regular fa-eye-slash"></i>
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+             </div>
+             <div class="inputBox">
+                <button type="submit" value="Create Account" class="input">Sign Up</button>
+             </div>
+             
+        <p>Already a member? <a href="/login" class="login">Sign In</a></p>
+    
+             </form>
+            </div>
+                
+             
+   
+
+{% endblock %}

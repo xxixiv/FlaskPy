@@ -1,0 +1,33 @@
+@font-face {
+         font-family: primaryFont;
+         src: url(../fonts/Helvetica.ttf);
+       }
+@font-face {
+         font-family: Architect;
+         src: url(../fonts/ArchitectsDaughter-Regular.ttf);
+       }
+@font-face {
+         font-family: Gloria;
+         src: url(../fonts/GloriaHallelujah-Regular.ttf);
+       }
+@font-face {
+         font-family: SpecialE;
+         src: url(../fonts/SpecialElite-Regular.ttf);
+       }
+@font-face {
+         font-family: Pushster;
+         src: url(../fonts/Pushster-Regular.ttf);
+       }
+@font-face {
+         font-family: LatoRegular;
+         src: url(../fonts/Lato-Regular.ttf);
+       }
+@font-face {
+  font-family: UbuntuRegular;
+  src: url(../Fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: PoppinsRegular;
+  src: url(../Fonts/Poppins-Regular.ttf);
+}

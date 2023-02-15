@@ -1,0 +1,139 @@
+
+.formBox
+{
+background: var(--secondary-color5);
+font-family: PoppinsRegular;
+padding: 40px;
+border-radius: 20px;
+border: 8px solid transparent;
+box-shadow: -5px -5px 15px var(--rgba-color2),
+5px 5px 15px var(--rgba-color3),
+inset -5px -5px 15px var(--rgba-color2),
+inset 5px 5px 15px var(--rgba-color3)
+}
+
+.formBox .form
+{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 25px;
+}
+
+.formBox .form h2
+{
+color: var(--secondary-color7);
+font-weight: 300;
+letter-spacing: 0.1em;
+}
+
+.formBox .form .inputBox
+{
+position: relative;
+width: 300px;
+}
+
+.formBox .form .inputBox .input
+{
+padding: 12px 10px 12px 48px;
+border: none;
+width: 100%;
+background: var(--secondary-color6);
+border: 1px solid var(--rgba-color1);
+color: var(--secondary-color7);
+font-weight:300;
+border-radius: 25px;
+font-size: 1em;
+box-shadow: -5px -5px 15px var(--rgba-color2),
+5px 5px 15px var(--rgba-color3);
+transition: 0.5s;
+outline: none;
+}
+
+.formBox .form .inputBox span
+{
+position: absolute;
+left: 0;
+pointer-events: none;
+padding: 12px 10px 12px 48px; 
+font-weight: 300;
+transition: 0.5s;
+letter-spacing: 0.05em;
+color: var(--rgba-color2);
+} 
+
+.formBox .form .inputBox .input:valid ~ span,
+.formBox .form .inputBox .input:focus ~ span
+{
+color: var(--secondary-color7);
+border: 1px solid var(--secondary-color7);
+background: var(--secondary-color6);
+transform: translateX(25px) translateY(-7px);
+font-size: 0.6em;
+border-radius: 10px;
+padding: 0 8px;
+letter-spacing: 0.1em;
+}
+
+.formBox .form .inputBox .input:valid,
+.formBox .form .inputBox .input:focus
+{
+border: 1px solid var(--secondary-color7);
+}
+
+.formBox .form .inputBox .input[type="submit"]
+{
+background: var(--secondary-color7);
+color: var(--secondary-color6);
+padding: 10px 0;
+font-weight: 500;
+cursor: pointer;
+box-shadow: -5px -5px 15px var(--rgba-color2),
+5px 5px 15px var(--rgba-color3),
+inset -5px -5px 15px var(--rgba-color2),
+inset 5px 5px 15px var(--rgba-color3)
+}
+
+
+.formBox .form .inputBox i
+{
+position: absolute;
+top: 15px;
+left: 16px;
+width: 25px;
+padding: 2px 0;
+padding-right: 10px;
+color: var(--secondary-color7);
+border-right: 1px solid var(--secondary-color7);
+}
+
+.formBox .form .inputBox .eye .show,
+.formBox .form .inputBox .eye .hide
+{
+left: 90%;
+border-right: 0;
+}
+
+.formBox .form .inputBox .eye .hide
+{
+display: none;
+}
+
+button[type="submit"]:active
+{
+opacity: 0.8;
+}
+
+.formBox .form p
+{
+color: var(--rgba-color2);
+font-size: 0.75em;
+font-weight: 300;
+}
+
+.formBox .form p a
+{
+font-weight: 500;
+color: var(--secondary-color2);
+}

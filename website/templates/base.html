@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <title>{% block title %}{% endblock %}</title>
+         <link rel="stylesheet" href="../static/Assets/Css/style.css">
+         <link rel="stylesheet" href="../static/Assets/Css/fonts.css">
+         <link rel="stylesheet" href="../static/Assets/Css/colour.css">
+         <link rel="stylesheet" href="../static/Assets/Css/form.css">
+         <link rel="stylesheet" href="../static/Assets/Css/bg.css">
+         <link rel="stylesheet" href="../static/Assets/Css/@mediaqueries.css">
+         
+</head>
+<body>
+         <div class="header">
+                  <div class="logo">
+                      <img src="../static/Assets/images/Logo-merc 01.png" alt="logo loading..." href="./index.html">
+                  </div> 
+                  <nav>
+                      <ul>
+                          <li><a href="/home">Home</a></li>
+                          {% if user.is_authenticated %}
+                          <li><a href="/logout">Sign Out</a></li>
+                          {% else %}
+                          <li><a href="/login">Sign In</a></li>
+                          <li><a href="/sign_up">Sign Up</a></li>
+                          {% endif %}
+                          </ul>
+                  </nav>
+                  <div class="toggle">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </div>
+              </div>
+              <div class="menu-btn">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="/logout">Sign Out</a></li>
+                    {% else %}
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/sign_up">Sign Up</a></li>
+                    {% endif %}
+                    </ul>
+              </div>
+              <div class="section">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+
+                {% if messages %}
+                {% for category, message in messages %}
+                {% if category == "error" %}
+                    <div class="danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% else %}
+                    <div class="success" role="alert">
+                        <br>
+                        {{message}}
+                    </div>                            
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}              
+                  <div class="overlay"></div>
+                  <div class="box-container">             
+              {% block content %}
+              {% endblock %}
+                  </div>
+                  </div>
+                  
+         <script>
+                var passwordField = document.querySelector('.pword');
+                var show = document.querySelector('.show');
+                var hide = document.querySelector('.hide');
+
+                show.onclick = function(){
+                    passwordField.setAttribute("type", "text");
+                    show.style.display = "none";
+                    hide.style.display = "flex";
+                }
+                hide.onclick = function(){
+                    passwordField.setAttribute("type", "password");
+                    show.style.display = "flex";
+                    hide.style.display = "none";
+                }
+                  function rain(){
+                           let amount = 200;
+                           let body = document.querySelector('.section');
+                           let i = 0;
+                           while(i < amount){
+                                    let drop = document.createElement('j');
+
+                                    let size = Math.random() *5;
+                                    let posX = Math.floor(Math.random() *window.innerWidth);
+                                    let delay = Math.random() * -20;
+                                    let duration = Math.random() *5
+
+
+                                    drop.style.width = 0.2 + size+'px';
+                                    drop.style.left = posX + 'px';
+                                    drop.style.animationDelay = delay+'s';
+                                    drop.style.animationDuration = 1+duration+'s';
+                                    body.appendChild(drop);
+                                    i++
+
+                           }
+                  }
+                  rain();
+                  let menuToggle = document.querySelector(".toggle");
+                  let menuBtn = document.querySelector(".menu-btn");
+                  menuToggle.onclick = function(){
+                      menuToggle.classList.toggle('act');
+                      menuBtn.classList.toggle('show')}
+         </script>
+</body>
+</html>
